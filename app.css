@@ -1,0 +1,180 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header .logo {
+    width: 100px; /* Espacio reservado */
+    height: 40px;
+    background: transparent;
+    border: 1px dashed #bbb;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 1.2rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.2s;
+}
+
+header nav ul li a:hover {
+    color: #4caf50;
+    transform: scale(1.05);
+}
+
+/* Icono de WhatsApp */
+.whatsapp-icon img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s;
+}
+
+.whatsapp-icon img:hover {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Main Content */
+main {
+    padding-top: 100px;
+    text-align: center;
+}
+
+/* Login Container */
+.login-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+.app-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Form Styles */
+.login-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #777;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #fdfdfd;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #4caf50;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 3px rgba(76, 175, 80, 0.5);
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* Footer Links */
+.login-footer {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #777;
+}
+
+.login-footer a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .login-container {
+        padding: 30px 20px;
+    }
+}
