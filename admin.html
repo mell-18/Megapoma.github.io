@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Inventario - Colmado</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Administración de Inventario</h1>
+        <form id="producto-form">
+            <input type="text" id="nombre" placeholder="Nombre del producto" required>
+            <input type="number" id="precio" placeholder="Precio" required>
+            <input type="number" id="cantidad" placeholder="Cantidad" required>
+            <button type="submit">Agregar Producto</button>
+        </form>
+        
+        
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="inventario-lista">
+                <!-- Productos agregados aparecerán aquí -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.getElementById('producto-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            let nombre = document.getElementById('nombre').value;
+            let precio = document.getElementById('precio').value;
+            let cantidad = document.getElementById('cantidad').value;
+            
+            if (nombre && precio && cantidad) {
+                let tabla = document.getElementById('inventario-lista');
+                let fila = document.createElement('tr');
+                
+                fila.innerHTML = `
+                    <td>${nombre}</td>
+                    <td>${precio}</td>
+                    <td>${cantidad}</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="eliminar">Eliminar</button>
+                    </td>
+                `;
+                
+                tabla.appendChild(fila);
+                document.getElementById('producto-form').reset();
+                
+                fila.querySelector('.eliminar').addEventListener('click', function() {
+                    fila.remove();
+                });
+                
+                fila.querySelector('.editar').addEventListener('click', function() {
+                    document.getElementById('nombre').value = nombre;
+                    document.getElementById('precio').value = precio;
+                    document.getElementById('cantidad').value = cantidad;
+                    fila.remove();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
